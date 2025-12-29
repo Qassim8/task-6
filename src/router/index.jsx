@@ -33,12 +33,6 @@ const Router = () => {
             </Route>
           </Route>
 
-          {/* <Route path="/food" element={<FoodLayout />}>
-            <Route index element={<Pizza />} />
-            <Route path="burger" element={<Burger />} />
-            <Route path="salad" element={<Salad />} />
-          </Route> */}
-
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<h1>404 | Not Found</h1>} />
         </Routes>
