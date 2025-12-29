@@ -1,32 +1,36 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 
 import Home from "../pages/Home";
-import Drinks from "../pages/Drinks";
-import Food from "../pages/Food";
 import Login from "../pages/Login";
 import Pizza from "../pages/Pizza";
 import Burger from "../pages/Burger";
 import Salad from "../pages/Salad";
 import MainLayout from "../layouts/MainLayout";
 import FoodLayout from "../layouts/FoodLayout";
-import { useState } from "react";
+import DrinksLayout from "../layouts/DrinksLayout";
+import Juice from "../pages/Juice";
+import HotDrinks from "../pages/HotDrinks";
+import Soda from "../pages/Soda";
 
 const Router = () => {
-    const [count, setCount] = useState(0)
   return (
     <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route path="drinks" element={<Drinks />} />
+
+            <Route path="drinks" element={<DrinksLayout />}>
+              <Route index element={<Juice />} />
+              <Route path="hots" element={<HotDrinks />} />
+              <Route path="sodas" element={<Soda />} />
+            </Route>
 
             <Route path="food" element={<FoodLayout />}>
               <Route index element={<Pizza />} />
               <Route path="burger" element={<Burger />} />
               <Route path="salad" element={<Salad />} />
             </Route>
-            
           </Route>
 
           {/* <Route path="/food" element={<FoodLayout />}>
